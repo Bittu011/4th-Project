@@ -2,12 +2,12 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body{
     font-style: italic;
     width: 100vw;
-    overflow-x: hidden;
 }
 
 .Naviagtion{
@@ -29,7 +29,6 @@ body{
 
 .option{
     display: flex;
-    padding-left: 100px;
     text-align: center;
     justify-content: center;
 }
@@ -48,7 +47,6 @@ body{
 }
 
 .nav{
-    /* margin-left: 180px; */
     font-size: larger;
     text-decoration: none;
     color: white;
@@ -87,8 +85,8 @@ body{
     width: 80vw;
     display: flex;
     flex-direction: column;
-    margin-top: 60px;
-    margin-left: 150px;
+    /* margin-top: 60px;
+    margin-left: 150px; */
     justify-content: space-evenly;
 }
 
@@ -120,44 +118,38 @@ body{
     margin-bottom: 60px;
 }
 
-@media screen and (max-width:720px) {
-    .option{
-        display: none;
-    }
-}
-
 form{
-    padding-top: 50px;
-    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
     justify-content: center;
     text-align: center;
     align-items: center;
 }
 
 .input-group{
-    margin-bottom: 30px;
-    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
 }
 
 input, textarea{
-    width: 30%;
-    padding: 10px;
+    /* width: 75%; */
+    padding: .5rem;
     outline: 0;
     border: 1px solid black;
     background: transparent;
-    color: #fff;
+    color: black;
     font-size: 15px;
 }
 
 label{
+    width: 10%;
     height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 10px;
-    padding-left: 330px;
     color: black;
-    cursor: text;
+    cursor: pointer;
 }
 
 .footer{
@@ -173,6 +165,10 @@ label{
     color: white;
 }
 
+.footer{
+    height: auto;
+}
+
 .footer a{
     color: white;
     text-decoration: none;
@@ -186,3 +182,49 @@ label{
     color: white;
     font-size: x-large;
 }
+
+.ham{
+    display: none;
+}
+
+@media screen and (max-width:720px){
+    .Naviagtion{
+        flex-direction: column;
+        height: auto;
+    }
+    label{
+        width: 100%;
+    }
+    .footer{
+        flex-direction: column;
+        align-items: center;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    .input-group{
+        flex-direction: column;
+    }
+    .option{
+        display: none;
+    }
+    
+    .ham{
+        display: inline-block;
+        color: black;
+        z-index: 1;
+    }
+    .option.active{
+        display: block;
+        position: absolute;
+        top: 30px;
+        background-color: gray;
+        width: 100%;
+    }
+    .option ul{
+        flex-direction: column;
+    }
+    
+}
+
+
